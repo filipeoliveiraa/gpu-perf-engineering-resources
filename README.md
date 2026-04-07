@@ -103,7 +103,6 @@ Recommended reading order:
 - [How to Optimize a CUDA Matmul Kernel for cuBLAS-like Performance](https://siboehm.com/articles/22/CUDA-MMM) - siboehm. The canonical starting tutorial. Covers tiling, shared memory, vectorized loads
 - [Inside NVIDIA GPUs: Anatomy of High-Performance Matmul Kernels](https://www.aleksagordic.com/blog/matmul) - Aleksa Gordić. 47 figures. Covers PTX/SASS, wave quantization, ILP, roofline model, warp tiling
 - [Outperforming cuBLAS on H100: A Worklog](https://cudaforfun.substack.com/p/outperforming-cublas-on-h100-a-worklog) - cudaforfun. Real optimization journey using WGMMA and TMA
-- [Fast CUDA GEMM with Tensor Cores](https://github.com/lezcano/gemm) - lezcano. Practical tensor core implementation
 
 ### Advanced implementations
 
