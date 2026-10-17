@@ -59,7 +59,7 @@ Read these in order if you are new to the field.
 1. [How to Scale Your Model: Inference](https://jax-ml.github.io/scaling-book/inference/) - One request from prefill through decode, with batching, KV memory, and parallelism.
 2. [Attention Is All You Need](https://arxiv.org/abs/1706.03762) - The transformer computation that the rest of the list optimizes.
 3. [CUDA C++ basics](https://docs.nvidia.com/cuda/cuda-programming-guide/02-basics/intro-to-cuda-cpp.html) - The shortest official introduction to the CUDA execution model.
-4. [Programming Massively Parallel Processors](https://www.elsevier.com/books/programming-massively-parallel-processors/hwu/978-0-323-91231-0) - The main textbook for GPU programming, memory, and kernel design.
+4. [Programming Massively Parallel Processors](https://shop.elsevier.com/books/programming-massively-parallel-processors/hwu/978-0-443-43900-1) - The main textbook for GPU programming, memory, and kernel design.
 5. [Roofline: An Insightful Visual Performance Model](https://users.cs.duke.edu/~lkw34/papers/roofline-cacm2008.pdf) - The compute, memory-bandwidth, and arithmetic-intensity model.
 6. [Transformer Inference Arithmetic](https://kipply.github.io/blog/transformer-inference-arithmetic/) - FLOPs, parameter bytes, KV bytes, and communication for transformer inference.
 7. [Efficiently Scaling Transformer Inference](https://proceedings.mlsys.org/paper_files/paper/2023/file/c4be71ab8d24cdfb45e3d06dbfca2780-Paper-mlsys2023.pdf) - Latency, memory, and parallelism costs for large-model inference.
@@ -111,7 +111,7 @@ For a practical companion, use the [GPU Mode lectures](https://github.com/gpu-mo
 - [OCP 8-bit Floating Point Specification](https://www.opencompute.org/documents/ocp-8-bit-floating-point-specification-ofp8-revision-1-1-final-pdf) - E4M3 and E5M2 formats.
 - [OCP Microscaling Formats Specification](https://www.opencompute.org/documents/ocp-microscaling-formats-mx-v1-0-spec-final-pdf) - Shared-scale MX formats.
 - [NVIDIA Transformer Engine](https://github.com/NVIDIA/TransformerEngine) - FP8 and FP4 transformer execution with scaling controls.
-- [Blackwell matrix multiply instructions](https://docs.nvidia.com/cutlass/latest/media/docs/pythonDSL/mma_docs/tcgen05_programming.html) - `tcgen05`, tensor memory, and Blackwell MMA programming.
+- [Blackwell matrix multiply instructions](https://docs.nvidia.com/cutlass/latest/media/docs/pythonDSL/guides/mma/tcgen05_programming.html) - `tcgen05`, tensor memory, and Blackwell MMA programming.
 
 ### Attention
 
@@ -139,11 +139,11 @@ For a practical companion, use the [GPU Mode lectures](https://github.com/gpu-mo
 
 ### Other hardware stacks
 
-- [ROCm Composable Kernel](https://github.com/ROCm/composable_kernel) - AMD tiling, layout, and operator primitives.
+- [ROCm Composable Kernel](https://rocm.docs.amd.com/projects/composable_kernel/en/latest/) - AMD tiling, layout, and operator primitives.
 - [ROCm AITER](https://github.com/ROCm/aiter) - AMD inference and transformer operator implementations.
 - [HipKittens](https://github.com/HazyResearch/HipKittens) - A tile abstraction for AMD GPUs.
 - [Pallas design](https://docs.jax.dev/en/latest/pallas/design/design.html) - The JAX kernel model for GPU and TPU backends.
-- [NKI programming model](https://awsdocs-neuron.readthedocs-hosted.com/en/latest/nki/programming_model.html) - The tile-level programming model for AWS NeuronCore hardware.
+- [NKI language guide](https://awsdocs-neuron.readthedocs-hosted.com/en/latest/nki/get-started/nki-language-guide.html) - The tile-level kernel language for AWS NeuronCore hardware.
 
 ### Profiling, benchmarking, and correctness
 
@@ -168,7 +168,7 @@ For a practical companion, use the [GPU Mode lectures](https://github.com/gpu-mo
 - [Grouped-Query Attention](https://arxiv.org/abs/2305.13245) - Fewer key-value heads and a smaller KV cache.
 - [DeepSeek-V2](https://arxiv.org/abs/2405.04434) - Multi-head latent attention and compressed KV state.
 - [KIVI](https://proceedings.mlr.press/v235/liu24bz.html) - KV quantization with separate treatment for keys and values.
-- [CacheGen](https://cs.stanford.edu/~keithw/sigcomm2024/sigcomm24-final1571-acmpaginated.pdf) - KV compression for transfer.
+- [CacheGen](https://arxiv.org/abs/2310.07240) - KV compression for transfer.
 - [Mooncake](https://www.usenix.org/conference/fast25/presentation/qin) - A distributed KV cache and data plane.
 
 ### Quantization
@@ -196,13 +196,13 @@ For a practical companion, use the [GPU Mode lectures](https://github.com/gpu-mo
 - [Ring Attention](https://arxiv.org/abs/2310.01889) - Exact distributed attention by circulating KV blocks around a device ring.
 - [MInference 1.0](https://arxiv.org/abs/2407.02490) - Dynamic sparse patterns for long-context prefill on existing models.
 - [Native Sparse Attention](https://arxiv.org/abs/2502.11089) - A model trained with a hardware-aligned sparse attention hierarchy.
-- [vLLM multimodal inputs](https://docs.vllm.ai/en/latest/features/multimodal_inputs.html) - Current engine support for text, image, audio, and video inputs.
+- [vLLM multimodal inputs](https://docs.vllm.ai/en/latest/features/multimodal_inputs/) - Current engine support for text, image, audio, and video inputs.
 
 ## 5. Distributed inference
 
 ### Parallelism, collectives, and topology
 
-- [Megatron-LM](https://arxiv.org/abs/1909.08053) - Tensor and pipeline parallelism for transformer models.
+- [Megatron-LM](https://arxiv.org/abs/1909.08053) - Intra-layer tensor parallelism for transformer models.
 - [NCCL](https://github.com/NVIDIA/nccl) - NVIDIA's collective communication implementation.
 - [Multi-node NVLink Systems Tuning Guide](https://docs.nvidia.com/multi-node-nvlink-systems/multi-node-tuning-guide/) - NVLink and InfiniBand topology in GB200 NVL systems.
 - [UALink 1.0 Specification](https://ualinkconsortium.org/wp-content/uploads/2025/04/UALink200_Specification_v1.0_Evaluation_Copy.pdf) - An open scale-up interconnect.
@@ -221,7 +221,7 @@ For a practical companion, use the [GPU Mode lectures](https://github.com/gpu-mo
 - [Splitwise](https://www.microsoft.com/en-us/research/publication/splitwise-efficient-generative-llm-inference-using-phase-splitting/) - Phase-specific allocation and scheduling.
 - [Mooncake](https://www.usenix.org/conference/fast25/presentation/qin) - KV-centric disaggregated inference.
 - [NIXL](https://github.com/ai-dynamo/nixl) - A transport layer for moving inference state across memory and network backends.
-- [Dynamo disaggregated serving](https://docs.nvidia.com/dynamo/design-docs/disaggregated-serving.md) - A current production implementation.
+- [Dynamo](https://github.com/ai-dynamo/dynamo) - A production implementation of disaggregated prefill and decode with KV-aware routing.
 
 ### Production systems
 
@@ -232,7 +232,7 @@ For a practical companion, use the [GPU Mode lectures](https://github.com/gpu-mo
 
 ### Serving benchmarks
 
-- [MLPerf Inference](https://www.cs.toronto.edu/ecosystem/papers/ISCA_20/MLPerf%20Inference.pdf) - Reproducible benchmark scenarios and load generation.
+- [MLPerf Inference](https://arxiv.org/abs/1911.02549) - Reproducible benchmark scenarios and load generation.
 - [Etalon](https://arxiv.org/html/2407.07000) - Goodput under per-request latency SLOs.
 - [ServeGen](https://www.usenix.org/system/files/nsdi26-xiang-servegen.pdf) - Workload generation that preserves important production-trace properties.
 - [BurstGPT](https://github.com/HPMLL/BurstGPT) - A public trace for bursty LLM workloads.
@@ -265,7 +265,7 @@ Read each architecture with its ISA or tuning guide. Vendor peak numbers are not
 
 - [Trainium and Inferentia2 architecture](https://awsdocs-neuron.readthedocs-hosted.com/en/latest/nki/guides/architecture/trainium_inferentia2_arch.html) - NeuronCore v2 compute and memory architecture.
 - [Trainium3 architecture](https://awsdocs-neuron.readthedocs-hosted.com/en/latest/nki/guides/architecture/trainium3_arch.html) - The current NeuronCore architecture.
-- [NKI performance guide](https://awsdocs-neuron.readthedocs-hosted.com/en/v2.24.0/general/nki/nki_perf_guide.html) - Kernel optimization for Trainium and Inferentia.
+- [NKI performance guide](https://awsdocs-neuron.readthedocs-hosted.com/en/latest/nki/deep-dives/nki_perf_guide.html) - Kernel optimization for Trainium and Inferentia.
 
 ## Frontier
 
